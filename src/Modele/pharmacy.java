@@ -2,6 +2,7 @@ package Modele;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+;
 
 public abstract class  pharmacy {
 	 
@@ -101,6 +102,50 @@ public abstract class  pharmacy {
 			this.chiffreAffaires = chiffreAffaires;
 		}
 
+		public boolean canPayEmployees(){
+	    	double temp = 0;
+			for (int i = 0; i < listeEmploye.size(); i++) {
+				temp += listeEmploye.get(i).calcSalaire();
+			}
+			if(temp>compte.getMontant()){
+				return false;
+			} else {
+				return true;
+			}
+		}
+
+		public boolean payEmployees(){
+	    	if(canPayEmployees()){
+				double temp = 0;
+				for (int i = 0; i < listeEmploye.size(); i++) {
+					temp += listeEmploye.get(i).calcSalaire();
+				}
+				compte.debiter(temp);
+				return true;
+			} else {
+	    		return false;
+			}
+		}
+
+		public abstract boolean acheterProduit(Produit produit);
+
+		public void vendreProduit(Produit produit){
+			if(listeProduit.contains(produit)){
+				listeProduit.remove(produit);
+				compte.Verser(produit.getPrixVente());
+			}
+		}
+
+		public boolean addEmployee(Employe x){
+			this.getListeEmploye().add(x);
+			if(!canPayEmployees()){
+				this.getListeEmploye().remove(x);
+				return false;
+			} else {
+				return true;
+			}
+		}
+	
 	    
 	    
 }

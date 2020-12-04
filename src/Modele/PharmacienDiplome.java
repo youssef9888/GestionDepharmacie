@@ -8,12 +8,12 @@ public class PharmacienDiplome extends Employe{
 	private boolean Manger ;
 	
 	
-	public PharmacienDiplome(String nom, String prenom, String adresse,double salaire,boolean manger) {
+	public PharmacienDiplome(String nom, String prenom, String adresse,double salaire) {
 	
 		    super(nom, prenom, adresse);
 	        this.setSalaire(salaire);
 	        this.setVentesTotal(0);
-	        this.setManger(manger);
+	        
 	}
 
 	public double getSalaire() {
