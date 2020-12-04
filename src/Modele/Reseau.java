@@ -1,6 +1,22 @@
 package Modele;
 
-public class Reseau {
- 
- 
+import java.util.ArrayList;
+
+
+
+public abstract class Reseau {
+
+	abstract double calculRemboursement(double montant);
+
+	abstract double calculTransaction(double montantt);
+   
+	   ArrayList<Pays> listePaysCree = null;
+
+	    public Pays createPays(String nom) {
+	        for (int i = 0 ; i < this.listePaysCree.size()-1 ; i++) {
+	            if (this.listePaysCree.get(i).getNom() == nom) return this.listePaysCree.get(i);
+	        }
+	        return new Pays(nom);
+	    }
+	
 }
