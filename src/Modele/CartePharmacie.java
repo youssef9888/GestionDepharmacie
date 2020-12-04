@@ -9,10 +9,10 @@ public class CartePharmacie extends PaiementStrategy {
 
 	@Override
 	public boolean payer(double montantt) {
-		 if((montantMensuel+reseau.calculTransaction(montantt))>montant){
+		 if((montantMensuel+reseau.Transaction(montantt))>montant){
 	            return false;
 	        } else {
-	        	montantMensuel += reseau.calculTransaction(montantt);
+	        	montantMensuel += reseau.Transaction(montantt);
 	            return true;
 	        }
 	}

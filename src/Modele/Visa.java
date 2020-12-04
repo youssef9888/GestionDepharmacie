@@ -11,12 +11,12 @@ public class Visa extends Reseau {
     }
 
     @Override
-    public double calculTransaction(double montant) {
+    public double Transaction(double montant) {
         return montant - montant*0.0025;
     }
 
     @Override
-    public double calculRemboursement(double montant){
+    public double Remboursement(double montant){
         switch (this.pays.getNom()) {
             case "France":
                 return montant - montant*0;

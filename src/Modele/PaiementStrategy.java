@@ -28,7 +28,7 @@ public abstract class PaiementStrategy  {
 	}
 
 	 public void remboursement(double somme){
-	        montant += reseau.calculRemboursement(somme);
+	        montant += reseau.Remboursement(somme);
 	    }
 	public abstract boolean payer(double montant);
 	

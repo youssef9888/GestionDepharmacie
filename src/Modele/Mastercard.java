@@ -2,12 +2,12 @@ package Modele;
 
 public class Mastercard extends Reseau {
 	   @Override
-	    public double calculTransaction(double montant) {
+	    public double Transaction(double montant) {
 	        return montant - montant*0.005;
 	    }
 
 	    @Override
-	    public double calculRemboursement(double montant){
+	    public double Remboursement(double montant){
 	        return montant;
 	    }
 	

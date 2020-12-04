@@ -6,9 +6,9 @@ import java.util.ArrayList;
 
 public abstract class Reseau {
 
-	abstract double calculRemboursement(double montant);
+	abstract double Remboursement(double montant);
 
-	abstract double calculTransaction(double montantt);
+	abstract double Transaction(double montantt);
    
 	   ArrayList<Pays> listePaysCree = null;
 

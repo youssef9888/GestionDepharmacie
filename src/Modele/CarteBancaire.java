@@ -9,10 +9,10 @@ public class CarteBancaire extends PaiementStrategy {
 
 	@Override
 	public boolean payer(double montantt) {
-		   if(reseau.calculTransaction(montantt)>montant){
+		   if(reseau.Transaction(montantt)>montant){
 	            return false;
 	        } else {
-	            montant = montant - reseau.calculTransaction(montantt);
+	            montant = montant - reseau.Transaction(montantt);
 	            return true;
 	        }
 		
